@@ -20,8 +20,8 @@ client.setConfig({
 });
 
 app.post("/", function(req, res) {
-  const firstName = req.body.fName;
-  const lastName = req.body.lName;
+  const firstName = req.body.firstName;
+  const lastName = req.body.secondName;
   const email = req.body.email;
   console.log(firstName, lastName, email);
   const subscribingUser = {
