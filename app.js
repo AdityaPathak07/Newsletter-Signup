@@ -20,8 +20,8 @@ client.setConfig({
 });
 
 app.post("/", function(req, res) {
-  const firstName = req.body.firstName;
-  const lastName = req.body.secondName;
+  const firstName = req.body.first;
+  const lastName = req.body.second;
   const email = req.body.email;
   console.log(firstName, lastName, email);
   const subscribingUser = {
@@ -33,6 +33,7 @@ app.post("/", function(req, res) {
   const run = async () => {
     try {
       const response = await client.lists.addListMember("c27be5355c", {
+        // email_address: subscribingUser.email,
         email_address: subscribingUser.email,
         status: "subscribed",
         merge_fields: {
